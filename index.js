@@ -1,4 +1,5 @@
 const fs = require("fs");
+const chalk = require('chalk');
 const { Command } = require('commander');
 const program = new Command();
 
@@ -16,14 +17,14 @@ program.command('words')
               console.log(err);
             } else {
               const words = data.split(' ').length;
-              console.log(`There are ${words} words in ${file}`);
+              console.log(`There are ` + chalk.red.bold(words) + " " + chalk.blue("words") + ` in ` + chalk.green.underline(file));
             }
         });
     });
 
 
 program.command('sentences')
-    .description('Count the number of words in a file')
+    .description('Count the number of lines in a file')
     .argument('<file>', 'file to count')
     .action((file) => {
         fs.readFile(file, 'utf8', (err, data) => {
@@ -31,7 +32,7 @@ program.command('sentences')
               console.log(err);
             } else {
               const lines = data.split('\n').length;
-              console.log(`There are ${lines} lines in ${file}`);
+              console.log(`There are ` + chalk.red.bold(lines) + " " + chalk.blue("lines") + ` in ` + chalk.green.underline(file));
             }
         });
     });
