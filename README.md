@@ -1,2 +1,2 @@
 # wordCounter
-CLI tool for counting words in a file using Commander external library
+CLI tool for file based tasks using Commander external library
