@@ -1,0 +1,11 @@
+{
+  "name": "wordcounter",
+  "version": "1.0.0",
+  "description": "CLI tool for counting words in a file using Commander external library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
